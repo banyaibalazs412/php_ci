@@ -20,14 +20,16 @@
                 <?php echo
                 form_label('Name');
                 echo
-                form_input(['class'=>'form-control','name'=>'name','placeholder'=>'Enter Name']);
+                form_input(['class'=>'form-control','name'=>'name','placeholder'=>'Enter Name'
+                            ,'maxlength'=>'25', 'minlength'=>'5', 'required'=>true]);
                 ?>
             </div>
             <div class="form-group">
                 <?php echo
                 form_label('Category');
                 echo
-                form_input(['class'=>'form-control','name'=>'category','placeholder'=>'Enter Category']);
+                form_input(['class'=>'form-control','name'=>'category','placeholder'=>'Enter Category'
+                            ,'maxlength'=>'25', 'minlength'=>'3', 'required'=>true]);
                 ?>
             </div>
             <div class="form-group">
@@ -35,7 +37,7 @@
                 form_label('Rate');
                 echo
                 form_input(['class'=>'form-control','name'=>'rate','placeholder'=>'Enter Rate','type'=>'number'
-                    , 'min'=>1, 'max'=>5]);
+                    , 'min'=>1, 'max'=>5,'required'=>true,]);
                 ?>
             </div>
 

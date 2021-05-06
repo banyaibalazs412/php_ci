@@ -9,21 +9,24 @@
             <div class="form-group">
                 <?php
                     echo form_label('Email');
-                    echo form_input(['class'=>'form-control','name'=>'email',
+                    echo form_input(['class'=>'form-control','name'=>'email', 'maxlength'=>'25',
+                        'minlength'=>'5', 'required'=>true,
                         'placeholder'=>'Enter Email','type'=>'email']);
                 ?>
             </div>
             <div class="form-group">
                 <?php
                     echo form_label('Username');
-                    echo form_input(['class'=>'form-control','name'=>'username',
+                    echo form_input(['class'=>'form-control','name'=>'username', 'maxlength'=>'25',
+                        'minlength'=>'5', 'required'=>true,
                         'placeholder'=>'Enter Username']);
                 ?>
             </div>
             <div class="form-group">
                 <?php
                     echo form_label('Password');
-                    echo form_password(['class'=>'form-control','name'=>'password',
+                    echo form_password(['class'=>'form-control','name'=>'password', 'maxlength'=>'25',
+                        'minlength'=>'5', 'required'=>true,
                         'placeholder'=>'Enter Password']);
                 ?>
             </div>

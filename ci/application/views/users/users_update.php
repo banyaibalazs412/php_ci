@@ -13,14 +13,16 @@
             <div class="form-group">
                 <?php
                     echo form_label('Email');
-                    echo form_input(['class'=>'form-control','name'=>'email', 'type'=>'email',
+                    echo form_input(['class'=>'form-control','name'=>'email', 'type'=>'email', 'maxlength'=>'25',
+                        'minlength'=>'5', 'required'=>true,
                         'placeholder'=>'Enter Email', 'value'=>$result->email]);
                 ?>
             </div>
             <div class="form-group">
                 <?php
                     echo form_label('Username');
-                    echo form_input(['class'=>'form-control','name'=>'username',
+                    echo form_input(['class'=>'form-control','name'=>'username','maxlength'=>'25',
+                        'minlength'=>'5', 'required'=>true,
                         'placeholder'=>'Enter Username', 'value'=>$result->username]);
                 ?>
             </div>

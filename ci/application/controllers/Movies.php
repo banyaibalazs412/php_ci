@@ -22,9 +22,20 @@
         }
 
         public function update_movie(){
-            $post_data = $this->input->post();
-            $this->movies_model->update_movie($post_data);
-            redirect('/movies/show');
+            $this->form_validation->set_rules('name','Name','trim|required|min_length[5]|max_length[25]');
+            $this->form_validation->set_rules('category','Category','trim|required|min_length[3]|max_length[25]');
+
+            if($this->form_validation->run() == FALSE){
+                redirect('/movies/show');
+            }else{
+                $post_data = $this->input->post();
+                if($post_data['rate']>=0 || $post_data<=5){
+                    $this->movies_model->update_movie($post_data);
+                    redirect('/movies/show');
+                }else{
+                    redirect('/movies/show');
+                }
+            }
         }
 
         public function add_view(){
@@ -35,10 +46,20 @@
         }
 
         public function add_movie(){
-            $post_data = $this->input->post();
-            $this->movies_model->add_movie($post_data);
-            redirect('/movies/show');
+            $this->form_validation->set_rules('name','Name','trim|required|min_length[5]|max_length[25]');
+            $this->form_validation->set_rules('category','Category','trim|required|min_length[3]|max_length[25]');
 
+            if($this->form_validation->run() == FALSE){
+                redirect('/movies/show');
+            }else{
+                $post_data = $this->input->post();
+                if($post_data['rate']>=0 || $post_data<=5){
+                    $this->movies_model->add_movie($post_data);
+                    redirect('/movies/show');
+                }else{
+                    redirect('/movies/show');
+                }
+            }
         }
     }
 ?>

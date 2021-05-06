@@ -16,15 +16,17 @@
             <div class="form-group">
                 <?php
                     echo form_label('Name');
-                    echo form_input(['class'=>'form-control','name'=>'name',
-                        'placeholder'=>'Enter Name', 'value'=>$result->name]);
+                    echo form_input(['class'=>'form-control','name'=>'name' ,'maxlength'=>'25',
+                                        'minlength'=>'5', 'required'=>true ,'placeholder'=>'Enter Name',
+                                        'value'=>$result->name]);
                 ?>
             </div>
             <div class="form-group">
                 <?php
                     echo form_label('Category');
-                    echo form_input(['class'=>'form-control','name'=>'category',
-                        'placeholder'=>'Enter Category', 'value'=>$result->category]);
+                    echo form_input(['class'=>'form-control','name'=>'category', 'maxlength'=>'25',
+                                        'minlength'=>'3', 'required'=>true, 'placeholder'=>'Enter Category',
+                                        'value'=>$result->category]);
                 ?>
             </div>
             <div class="form-group">
@@ -32,7 +34,7 @@
                     echo form_label('Rate');
                     echo form_input(['class'=>'form-control','name'=>'rate',
                         'placeholder'=>'Enter Rate', 'value'=>$result->rate
-                        ,'type'=>'number', 'min'=>1, 'max'=>5]);
+                        ,'type'=>'number', 'min'=>1, 'max'=>5, 'required'=>true]);
                 ?>
             </div>
             <?php
