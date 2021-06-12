@@ -49,6 +49,7 @@
             $this->form_validation->set_rules('name','Name','trim|required|min_length[5]|max_length[25]');
             $this->form_validation->set_rules('category','Category','trim|required|min_length[3]|max_length[25]');
 
+            
             if($this->form_validation->run() == FALSE){
                 redirect('/movies/show');
             }else{
